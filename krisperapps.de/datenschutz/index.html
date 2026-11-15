@@ -30,7 +30,7 @@
 <p>Beim Aufruf überträgt dein Browser technisch notwendig deine IP-Adresse. Der Webserver führt <strong>kein Zugriffsprotokoll</strong>; die Adresse wird nicht gespeichert. Apps mit Anmeldung halten sie kurzzeitig im Arbeitsspeicher, um Missbrauch zu begrenzen (zum Beispiel zu viele Anmeldeversuche).</p>
 
 <h3>Cookies und Speicher im Browser</h3>
-<p>Die Startseite setzt keine Cookies. Apps mit Anmeldung setzen genau ein technisch notwendiges Sitzungs-Cookie, das die Anmeldung trägt. Viele Apps legen Einstellungen und Inhalte im Speicher deines Browsers ab (localStorage, IndexedDB) und sich selbst im Offline-Speicher, damit sie ohne Netz funktionieren. Das bleibt auf deinem Gerät und lässt sich über die Browser-Einstellungen („Websitedaten löschen“) entfernen.</p>
+<p>Die Startseite setzt keine Cookies. Apps mit Anmeldung setzen ein technisch notwendiges Sitzungs-Cookie, das die Anmeldung trägt, und während der Anmeldung bei Google für höchstens zehn Minuten Hilfs-Cookies für den sicheren Ablauf. Viele Apps legen Einstellungen und Inhalte im Speicher deines Browsers ab (localStorage, IndexedDB) und sich selbst im Offline-Speicher, damit sie ohne Netz funktionieren. Das bleibt auf deinem Gerät und lässt sich über die Browser-Einstellungen („Websitedaten löschen“) entfernen.</p>
 
 <h3>Kamera, Mikrofon, Standort</h3>
 <p>Einige Apps fragen nach Kamera, Mikrofon oder Standort. Der Zugriff passiert nur nach deiner Zustimmung im Browser und nur, solange die App offen ist. Ob dabei etwas dein Gerät verlässt, steht unten bei der jeweiligen App.</p>
@@ -110,7 +110,40 @@
 <p>Deine Daten bleiben auf deinem Gerät: Importierte Dateien und Einstellungen liegen im Speicher des Browsers (IndexedDB) und werden nicht hochgeladen. Einzelne Datensätze lassen sich in der App löschen.</p>
 <p>Als einzige App zählt WebGraphy Seitenaufrufe, und zwar mit <strong>GoatCounter</strong> (webgraphy.goatcounter.com), einem Zähldienst ohne Cookies und ohne Wiedererkennung über Seiten hinweg. Pro Aufruf gehen dorthin: Seitenpfad, Seitentitel, verweisende Seite und Bildschirmbreite; GoatCounter sieht dabei IP-Adresse und Browserkennung. Aufrufe mit aktivem Werbe- oder Tracking-Blocker werden in der Regel nicht gezählt. Von Hand abschalten lässt es sich, indem du in der Browser-Konsole <code>localStorage.skipgc = 't'</code> setzt.</p>
 </section>
-<!-- MORE-APPS -->
+<section id="kassabuch">
+<h3>kassabuch</h3>
+<p>Gemeinsame Ausgaben in Gruppen. Anmeldung mit Google. Am Server gespeichert werden: deine E-Mail-Adresse und dein Anzeigename als Gruppenmitglied, die Gruppen (Name, Währung, Einladungslink) und die Ausgaben mit Titel, Betrag, Datum, Zahler, Aufteilung und der Adresse der Person, die sie eingetragen hat.</p>
+<p><strong>Wer sieht was:</strong> Alle Mitglieder einer Gruppe sehen Namen und E-Mail-Adressen der anderen Mitglieder und alle Ausgaben der Gruppe. Wer den Einladungslink hat, sieht den Gruppennamen schon vor der Anmeldung. Der Link gilt, bis jemand in der Gruppe einen neuen erzeugt.</p>
+<p>Das Sitzungs-Cookie gilt 90 Tage und enthält signiert deine E-Mail-Adresse, deinen Namen und die Adresse deines Google-Profilbilds. Die zuletzt geladenen Gruppendaten liegen zusätzlich im Offline-Speicher deines Browsers.</p>
+<p><strong>Löschen:</strong> Gelöschte Ausgaben bleiben zunächst wiederherstellbar und verschwinden endgültig erst mit der Gruppe. Wer eine Gruppe verlässt, wird entfernt; kommt die Person in Ausgaben vor, bleibt ihr Name dort stehen, die E-Mail-Adresse wird gelöscht. Verlässt das letzte Mitglied die Gruppe oder wird sie gelöscht, ist alles weg.</p>
+</section>
+<section id="pinnwand">
+<h3>pinnwand</h3>
+<p>Einkaufsliste, Aufgaben und Termine für einen Haushalt. Anmeldung mit Google. Am Server gespeichert werden: E-Mail-Adresse, Anzeigename und Rolle der Haushaltsmitglieder, Einladungen (auf Wunsch mit der Adresse der eingeladenen Person), die Einträge der Einkaufsliste, Aufgaben mit Erledigungen und Kommentaren, Termine, jeweils mit der Adresse der Person, die sie angelegt oder erledigt hat.</p>
+<p><strong>Wer sieht was:</strong> Alle Mitglieder eines Haushalts sehen alles im Haushalt, auch die Mitgliederliste mit E-Mail-Adressen und das Protokoll, wer was wann erledigt hat. Wer einen Einladungslink hat, sieht schon vor der Anmeldung den Haushaltsnamen und die E-Mail-Adresse der einladenden Person. Einladungen gelten 14 Tage und nur einmal.</p>
+<p><strong>Einkaufszettel scannen:</strong> Nur wenn du diese Funktion benutzt, wird das Foto des Zettels an diesen Server geschickt und von dort an <strong>Workers AI von Cloudflare</strong> weitergegeben, wo ein KI-Modell die Einträge abliest. Cloudflare erhält das Bild, aber weder deine E-Mail-Adresse noch deine IP-Adresse. Das Foto wird auf diesem Server nicht gespeichert.</p>
+<p>Das Sitzungs-Cookie gilt 90 Tage und enthält signiert E-Mail-Adresse, Namen und die Adresse deines Google-Profilbilds. Im Browser liegen außerdem die zuletzt geladenen Daten und noch nicht übertragene Einträge (für den Betrieb ohne Netz).</p>
+<p><strong>Löschen:</strong> Einträge, Termine, Erledigungen, Kommentare und offene Einladungen lassen sich in der App löschen; Aufgaben werden archiviert. Wer den Haushalt verlässt, verliert den Zugang; von ihm angelegte Einträge behalten seine Adresse als Urheber. Verlässt das letzte Mitglied den Haushalt, wird er gelöscht.</p>
+</section>
+<section id="meinekatze">
+<h3>MeineKatze</h3>
+<p>Tagebuch für Katzen in einem Haushalt. Anmeldung mit Google. Am Server gespeichert werden: E-Mail-Adresse und Rolle der Haushaltsmitglieder, Einladungen, die Katzen (Name, Geburtsdatum, Rasse, Chipnummer, Notizen), die Tagebucheinträge (Mahlzeiten, Gewicht, Ereignisse, Impfungen, Termine) mit der Adresse der Person, die sie eingetragen hat, und die hochgeladenen Fotos. Fotos werden vor dem Hochladen im Browser neu kodiert; Aufnahmeort und andere Metadaten der Kamera werden dabei nicht mitgeschickt.</p>
+<p><strong>Wer sieht was:</strong> Alle Mitglieder eines Haushalts sehen alle Katzen, Einträge und Fotos sowie die Mitgliederliste mit E-Mail-Adressen. Wer einen Einladungslink hat, sieht schon vor der Anmeldung den Haushaltsnamen und die E-Mail-Adresse der einladenden Person. Einladungen gelten 14 Tage und nur einmal.</p>
+<p>Daten gehen an niemanden sonst; es gibt keine KI-Auswertung. Das Sitzungs-Cookie gilt 90 Tage und enthält signiert E-Mail-Adresse, Namen und die Adresse deines Google-Profilbilds. Im Browser liegen außerdem zuletzt geladene Daten, Foto-Vorschauen und noch nicht übertragene Einträge.</p>
+<p><strong>Löschen:</strong> Einträge und Fotos lassen sich in der App löschen; Katzen werden archiviert. Wer den Haushalt verlässt, verliert den Zugang; von ihm angelegte Einträge behalten seine Adresse als Urheber. Verlässt das letzte Mitglied den Haushalt, wird er samt Katzen gelöscht.</p>
+</section>
+<section id="dokumentenablage">
+<h3>Dokumentenablage</h3>
+<p>Eine private Ablage ohne öffentliche Anmeldung: Zugang hat nur, wessen Google-Adresse ausdrücklich freigeschaltet ist. Am Server gespeichert werden: Google-Kennung, E-Mail-Adresse und Anzeigename des Kontos sowie die Dokumente, also die aufgenommenen Seiten als Bilder, der daraus gelesene Text und die Angaben dazu (Titel, Absender, Datum, Betrag, Schlagworte, Notizen). Jedes Konto sieht nur die eigenen Dokumente.</p>
+<p><strong>Texterkennung:</strong> Wenn du eine Seite lesen lässt, schickt der Server das Bild der Seite und anschließend den gelesenen Text an <strong>Workers AI von Cloudflare</strong>, wo KI-Modelle den Text abschreiben und die Angaben herauslesen. Cloudflare gibt an, Eingaben dieser Modelle nicht zum Training zu verwenden. An andere geht nichts.</p>
+<p>Das Sitzungs-Cookie gilt 90 Tage. Bereits angesehene Seitenbilder liegen im Offline-Speicher des Browsers und werden beim Abmelden gelöscht; Abmelden beendet die Sitzungen auf allen Geräten.</p>
+<p><strong>Löschen:</strong> Jedes Dokument und jede Seite lässt sich in der App löschen; Bilder und Text sind dann sofort weg (in den Sicherungen nach spätestens rund einem Monat). Ein Konto lösche ich auf Anfrage.</p>
+</section>
+<section id="lager">
+<h3>Lager</h3>
+<p>Ein internes Werkzeug eines Betriebs, kein öffentliches Angebot; Konten legt nur die Verwaltung des Betriebs an. Anmeldung mit Benutzername und Passwort (das Passwort wird nur als Hash gespeichert). Am Server gespeichert werden: Benutzername, Anzeigename und Rolle, die Sitzungen (mit Browserkennung, 14 Tage, verlängert bei Nutzung), ein Protokoll von Anmeldungen und Verwaltungsaktionen, wer welche Lagerbuchung gemacht hat, sowie die Betriebsdaten (Teile, Lieferanten, Aufträge mit Kundennamen). Fehlgeschlagene Anmeldeversuche werden mit gekürzter IP-Adresse für 15 Minuten vermerkt, um Passwort-Raten zu bremsen.</p>
+<p>Alle angemeldeten Personen des Betriebs sehen die Betriebsdaten; Benutzerliste, Protokoll und Export nur die Verwaltung. Die wöchentliche Bestell-Übersicht verschickt dieser Server per E-Mail an die in den Einstellungen hinterlegten Adressen. Wer Benachrichtigungen einschaltet, meldet seinen Browser beim Push-Dienst des Browser-Herstellers an; die Nachrichten dorthin sind verschlüsselt. Sonst geht nichts an Dritte.</p>
+</section>
 
 <p class="stand">Stand: November 2026</p>
 
