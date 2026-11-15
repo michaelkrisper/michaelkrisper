@@ -19,7 +19,7 @@
 
 <main class="legal">
 <h1>Datenschutz</h1>
-<p class="lead">Kurz gesagt: keine Werbung, keine Analyse-Werkzeuge, kein Tracking, keine Weitergabe von Daten zu Werbezwecken. Die meisten Apps arbeiten vollständig auf deinem Gerät.</p>
+<p class="lead">Kurz gesagt: keine Werbung, kein Tracking über Seiten hinweg, keine Weitergabe von Daten zu Werbezwecken. Die meisten Apps arbeiten vollständig auf deinem Gerät. Wo eine App Daten an andere Dienste schickt, steht es unten bei der App.</p>
 
 <h2>Verantwortlich</h2>
 <p>Michael Krisper, Graz, Österreich<br>E-Mail: <a href="mailto:kontakt@krisperapps.de">kontakt@krisperapps.de</a></p>
@@ -42,7 +42,7 @@
 <p>Wenn du an kontakt@krisperapps.de schreibst, wird deine Nachricht auf diesem Server angenommen und bleibt dort; sie wird nicht an einen anderen Anbieter weitergeleitet. Ich verwende sie nur, um dir zu antworten.</p>
 
 <h3>Sicherungen</h3>
-<p>Von den Datenbanken der Apps mit Anmeldung gibt es tägliche Sicherungskopien auf demselben Server; die 30 neuesten bleiben erhalten. Gelöschte Daten verschwinden damit nach spätestens rund einem Monat auch aus den Sicherungen.</p>
+<p>Von den Datenbanken der Apps, die etwas am Server speichern, gibt es tägliche Sicherungskopien auf demselben Server; die 30 neuesten bleiben erhalten. Gelöschte Daten verschwinden damit nach spätestens rund einem Monat auch aus den Sicherungen.</p>
 
 <h3>Rechtsgrundlagen</h3>
 <p>Soweit Apps personenbezogene Daten verarbeiten, geschieht das, um dir die App bereitzustellen, die du nutzt (Art. 6 Abs. 1 lit. b DSGVO), und für den sicheren Betrieb (Art. 6 Abs. 1 lit. f DSGVO).</p>
@@ -50,7 +50,69 @@
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Eine Nachricht an <a href="mailto:kontakt@krisperapps.de">kontakt@krisperapps.de</a> genügt; ein Konto samt Inhalten lösche ich auf Wunsch. Außerdem kannst du dich bei der <a href="https://www.dsb.gv.at/" rel="noopener">Österreichischen Datenschutzbehörde</a> beschweren.</p>
 
-<!-- APPS -->
+<h2 id="apps">Die einzelnen Apps</h2>
+<section id="puzzle">
+<h3>Puzzlehelfer</h3>
+<p>Arbeitet vollständig auf deinem Gerät. Deine Puzzles mit Vorlagenbild, Teilefotos und Lösungsstand liegen im Speicher des Browsers (IndexedDB) und werden nirgends hochgeladen. Die Kamera und die Bewegungssensoren (um zu erkennen, ob du das Handy still hältst) werden nur auf dem Gerät ausgewertet. Die Sprachausgabe nutzt die Stimme deines Browsers; je nach Browser kann das eine Online-Stimme des Herstellers sein.</p>
+<p>Löschen: jedes Puzzle samt Fotos in der App; sonst über die Websitedaten des Browsers.</p>
+</section>
+<section id="sudoku">
+<h3>Sudoku-Foto</h3>
+<p>Arbeitet vollständig auf deinem Gerät. Das Kamerabild wird im Browser ausgewertet und nicht hochgeladen. Das zuletzt erkannte Sudoku samt entzerrtem Foto bleibt im Speicher des Browsers (localStorage), bis das nächste es überschreibt oder du die Websitedaten löschst.</p>
+</section>
+<section id="rubik">
+<h3>Würfel-Löser</h3>
+<p>Arbeitet vollständig auf deinem Gerät. Kamerabilder werden im Browser ausgewertet und nicht hochgeladen. Gespeichert wird nur der letzte Würfelzustand (Farben und Züge, kein Foto) im Speicher des Browsers.</p>
+</section>
+<section id="muenzen">
+<h3>Münzzähler</h3>
+<p>Arbeitet vollständig auf deinem Gerät. Das Foto wird im Browser ausgewertet, nicht hochgeladen und nicht gespeichert. „Ergebnis teilen“ übergibt nur den Ergebnistext an die Teilen-Funktion deines Geräts.</p>
+</section>
+<section id="schach">
+<h3>Schachfoto</h3>
+<p>Für die Erkennung der Stellung wird dein Foto an diesen Server geschickt und von dort an <strong>Google Gemini</strong> (Google, generativelanguage.googleapis.com) weitergegeben, ein KI-Modell, das die Stellung abliest. Das Foto wird vorher im Browser verkleinert und neu kodiert; Aufnahmeort und andere Metadaten gehen dabei verloren. Google erhält das Bild, nicht deine IP-Adresse. Für die Verarbeitung dort gelten die Bedingungen von Google für die Gemini-API; je nach Tarif kann Google Eingaben zur Verbesserung seiner Dienste verwenden. Fotografiere daher nichts außer dem Brett.</p>
+<p>Der Server speichert weder Foto noch Ergebnis. Die Erkennung ist mit einem Zugangscode geschützt; Code und aktuelle Stellung liegen im Speicher deines Browsers. Die Analyse der Stellung (Stockfish) läuft auf deinem Gerät.</p>
+</section>
+<section id="schall">
+<h3>Schall</h3>
+<p>Arbeitet vollständig auf deinem Gerät. Das Mikrofon wird im Browser ausgewertet; es wird nichts übertragen. Ton wird nur gespeichert, wenn du eine Aufnahme startest, und dann nur im Speicher des Browsers (IndexedDB). Aufnahmen verlassen das Gerät nur, wenn du sie selbst teilst oder herunterlädst, und lassen sich in der App einzeln löschen.</p>
+</section>
+<section id="wetter">
+<h3>Wetter</h3>
+<p>Die App speichert nichts am Server. Ort, letzte Vorhersage und zuletzt gewählte Orte liegen im Speicher deines Browsers. Für die Vorhersage ruft dein Browser die Wetterdienste <strong>direkt</strong> ab; sie erhalten dabei deine IP-Adresse und folgende Angaben:</p>
+<ul>
+<li>Open-Meteo (api.open-meteo.com, geocoding-api.open-meteo.com): die Koordinaten des Orts (auf etwa 10 m gerundet) und bei der Ortssuche den eingegebenen Suchtext</li>
+<li>GeoSphere Austria (dataset.api.hub.geosphere.at): die Koordinaten des Orts für Kurzfristvorhersage und Niederschlagsradar</li>
+<li>OpenStreetMap Nominatim (nominatim.openstreetmap.org): die Koordinaten (auf etwa 100 m gerundet), um den Ortsnamen zu finden</li>
+<li>nur im Radar: RainViewer (api.rainviewer.com) und Esri (server.arcgisonline.com) für Radarbilder und Hintergrundkarte; sie sehen den betrachteten Kartenausschnitt</li>
+</ul>
+<p>Der Standort wird beim Öffnen abgefragt, wenn du es im Browser erlaubt und keinen Ort von Hand gewählt hast. Ohne Standortfreigabe funktioniert die App mit der Ortssuche.</p>
+</section>
+<section id="tv">
+<h3>TV</h3>
+<p>Die App speichert nichts am Server. Deine Senderauswahl und das Farbschema liegen im Speicher des Browsers. Die Programmdaten kommen von diesem Server. Die Sendungsbilder lädt dein Browser <strong>direkt</strong> von wsrv.nl (ein Bild-Verkleinerungsdienst) und files.fairu.app; beide erhalten dabei deine IP-Adresse und sehen, welche Bilder abgerufen werden, also indirekt, welche Sendungen angezeigt werden.</p>
+</section>
+<section id="roscoe">
+<h3>Roscoe (Saugroboter)</h3>
+<p>Eine Fernbedienung für Roborock-Saugroboter. Du meldest dich mit deinem <strong>Roborock-Konto</strong> an (E-Mail-Adresse und Einmalcode, den Roborock zuschickt). Dieser Server speichert nichts: Er reicht Anmeldung, Befehle, Status und Karte nur zwischen deinem Browser und der Roborock-Cloud (roborock.com, je nach Konto Region EU, US, CN oder RU) durch. Bei der Anmeldung wird deine E-Mail-Adresse der Reihe nach bei den Roborock-Regionen angefragt, bis eine das Konto kennt. Roborock sieht die Adresse dieses Servers, nicht deine IP-Adresse. Die Zugangsdaten für die Roborock-Cloud laufen dabei kurzzeitig durch den Arbeitsspeicher dieses Servers; die Befehle an den Roboter selbst sind mit dem Geräteschlüssel verschlüsselt.</p>
+<p>Zugangsdaten für die Roborock-Cloud, Gerätename, Raumnamen, letzter Status und letzte Karte liegen im Speicher deines Browsers. „Abmelden“ (Tipp auf den Gerätenamen) löscht alles davon. Für dein Roborock-Konto gilt die Datenschutzerklärung von Roborock.</p>
+</section>
+<section id="genial">
+<h3>Genial</h3>
+<p>Ein Brettspiel ohne Konto und ohne Namen. Spiele gegen den Computer oder zu zweit an einem Gerät laufen ganz im Browser. Für Online-Partien speichert der Server je Raum den vierstelligen Raumcode, den Spielstand und zufällige Spielerkennungen (eine Zufallszahl aus deinem Browser, kein Name, keine E-Mail, keine IP-Adresse). Wer den Raumcode kennt, kann mitspielen oder zusehen. Räume ohne Zug werden nach 24 Stunden gelöscht, alle anderen spätestens nach 7 Tagen.</p>
+</section>
+<section id="officeunlocker">
+<h3>OfficeUnlocker</h3>
+<p>Arbeitet vollständig auf deinem Gerät. Die gewählte Datei wird im Browser verarbeitet und als Download zurückgegeben; sie wird nicht hochgeladen und nicht gespeichert.</p>
+</section>
+<section id="webgraphy">
+<h3>WebGraphy</h3>
+<p>Deine Daten bleiben auf deinem Gerät: Importierte Dateien und Einstellungen liegen im Speicher des Browsers (IndexedDB) und werden nicht hochgeladen. Einzelne Datensätze lassen sich in der App löschen.</p>
+<p>Als einzige App zählt WebGraphy Seitenaufrufe, und zwar mit <strong>GoatCounter</strong> (webgraphy.goatcounter.com), einem Zähldienst ohne Cookies und ohne Wiedererkennung über Seiten hinweg. Pro Aufruf gehen dorthin: Seitenpfad, Seitentitel, verweisende Seite und Bildschirmbreite; GoatCounter sieht dabei IP-Adresse und Browserkennung. Aufrufe mit aktivem Werbe- oder Tracking-Blocker werden in der Regel nicht gezählt. Von Hand abschalten lässt es sich, indem du in der Browser-Konsole <code>localStorage.skipgc = 't'</code> setzt.</p>
+</section>
+<!-- MORE-APPS -->
+
+<p class="stand">Stand: November 2026</p>
 
 </main>
 

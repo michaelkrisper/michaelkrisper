@@ -313,6 +313,9 @@ main.legal {
 .legal ul { padding-left: 1.2rem; }
 .legal .lead { color: var(--text); font-size: 1.05rem; }
 .legal strong { color: var(--text); }
+.legal code { font-size: 0.9em; }
+.legal li { margin: 0.3rem 0; }
+.legal section { scroll-margin-top: 1rem; }
 .legal a { color: var(--text); }
 .legal .stand { margin-top: 2.5rem; font-size: 0.86rem; }
 .legal section:target h3 { text-decoration: underline; text-underline-offset: 0.25em; }
