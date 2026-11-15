@@ -1,0 +1,37 @@
+name: Start page
+
+# Publishes krisperapps.de/ to the server. The key may only write into the
+# start page's folder there.
+
+on:
+  push:
+    branches: [main]
+    paths: ['krisperapps.de/**', '.github/workflows/start-page.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: start-page
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: krisperapps.de
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Upload
+        if: env.DEPLOY_SSH_KEY != ''
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy
+          chmod 600 ~/.ssh/deploy
+          echo 'krisperapps.de ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMchrlhQI1OFJ2cEfQosiydiSPg498c/+Mggebk+zVLO' > ~/.ssh/known_hosts
+          rsync -rtz --delete -e 'ssh -i ~/.ssh/deploy' krisperapps.de/ deploy@krisperapps.de:./
+      - name: Verify
+        if: env.DEPLOY_SSH_KEY != ''
+        run: curl -fsS https://krisperapps.de/ | grep -q 'krisperapps'
