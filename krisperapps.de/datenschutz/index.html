@@ -27,7 +27,8 @@
 <h2>Was für alle Apps gilt</h2>
 <h3>Server</h3>
 <p>Diese Seite und die Apps liegen auf einem gemieteten Server der Hetzner Online GmbH in Nürnberg, Deutschland. Hetzner ist dabei Auftragsverarbeiter.</p>
-<p>Beim Aufruf überträgt dein Browser technisch notwendig deine IP-Adresse. Der Webserver führt <strong>kein Zugriffsprotokoll</strong>; die Adresse wird nicht gespeichert. Apps mit Anmeldung halten sie kurzzeitig im Arbeitsspeicher, um Missbrauch zu begrenzen (zum Beispiel zu viele Anmeldeversuche).</p>
+<p>Der Webserver protokolliert jeden Aufruf: IP-Adresse, Zeitpunkt, aufgerufene Adresse (ohne Abfrage-Parameter), Antwortcode, Browserkennung und die Seite, von der du gekommen bist. Cookies und Anmeldedaten werden nicht protokolliert. Das Protokoll dient der Sicherheit (Angriffe erkennen und abwehren) und einer einfachen Zugriffsstatistik. Es wird einmal im Monat ausgewertet und danach gelöscht; übrig bleibt nur eine Zusammenfassung ohne IP-Adressen (Aufrufe je App, Länder, verweisende Seiten). Das Land wird am Server selbst aus der IP-Adresse bestimmt; dafür geht nichts an einen anderen Dienst.</p>
+<p>Apps mit Anmeldung halten die IP-Adresse außerdem kurzzeitig im Arbeitsspeicher, um Missbrauch zu begrenzen (zum Beispiel zu viele Anmeldeversuche).</p>
 
 <h3>Cookies und Speicher im Browser</h3>
 <p>Die Startseite setzt keine Cookies. Apps mit Anmeldung setzen ein technisch notwendiges Sitzungs-Cookie, das die Anmeldung trägt, und während der Anmeldung bei Google für höchstens zehn Minuten Hilfs-Cookies für den sicheren Ablauf. Viele Apps legen Einstellungen und Inhalte im Speicher deines Browsers ab (localStorage, IndexedDB) und sich selbst im Offline-Speicher, damit sie ohne Netz funktionieren. Das bleibt auf deinem Gerät und lässt sich über die Browser-Einstellungen („Websitedaten löschen“) entfernen.</p>
@@ -45,7 +46,7 @@
 <p>Von den Datenbanken der Apps, die etwas am Server speichern, gibt es tägliche Sicherungskopien auf demselben Server; die 30 neuesten bleiben erhalten. Gelöschte Daten verschwinden damit nach spätestens rund einem Monat auch aus den Sicherungen.</p>
 
 <h3>Rechtsgrundlagen</h3>
-<p>Soweit Apps personenbezogene Daten verarbeiten, geschieht das, um dir die App bereitzustellen, die du nutzt (Art. 6 Abs. 1 lit. b DSGVO), und für den sicheren Betrieb (Art. 6 Abs. 1 lit. f DSGVO).</p>
+<p>Soweit Apps personenbezogene Daten verarbeiten, geschieht das, um dir die App bereitzustellen, die du nutzt (Art. 6 Abs. 1 lit. b DSGVO), und für den sicheren Betrieb und die Zugriffsstatistik (berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO).</p>
 
 <h2>Deine Rechte</h2>
 <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Eine Nachricht an <a href="mailto:kontakt@krisperapps.de">kontakt@krisperapps.de</a> genügt; ein Konto samt Inhalten lösche ich auf Wunsch. Außerdem kannst du dich bei der <a href="https://www.dsb.gv.at/" rel="noopener">Österreichischen Datenschutzbehörde</a> beschweren.</p>
