@@ -34,4 +34,6 @@ jobs:
           rsync -rtz --delete -e 'ssh -i ~/.ssh/deploy' krisperapps.de/ deploy@krisperapps.de:./
       - name: Verify
         if: env.DEPLOY_SSH_KEY != ''
-        run: curl -fsS https://krisperapps.de/ | grep -q 'krisperapps'
+        run: |
+          curl -fsS https://krisperapps.de/ | grep -q 'krisperapps'
+          curl -fsSL https://krisperapps.de/impressum | grep -q 'Medieninhaber'
