@@ -6,19 +6,21 @@ These are my open-source side projects. Most of them solve a small everyday prob
 
 ## Browser apps
 
+All of them at a glance: [krisperapps.de](https://krisperapps.de/) (its sources are in [`krisperapps.de/`](krisperapps.de)).
+
 | Project | What it does | Try it |
 |---|---|---|
-| [webgraphy](https://github.com/michaelkrisper/webgraphy) | WebGL data visualisation for millions of points: multi-axis charts, formula engine, fully offline | [Open](https://michaelkrisper.github.io/webgraphy/) |
-| [schall](https://github.com/michaelkrisper/schall) | Sound level meter and frequency analyser, Rust/WASM SIMD with WebGL2 (German UI) | [Open](https://michaelkrisper.github.io/schall/) |
-| [wetter](https://github.com/michaelkrisper/wetter) | Weather for Austria: minute-precise nowcast, hourly and daily forecasts blended into one (German UI) | [Open](https://michaelkrisper.github.io/wetter/) |
-| [rubik](https://github.com/michaelkrisper/rubik) | Photograph a Rubik's Cube and solve it move by move with a 3D guide (German UI) | [Open](https://michaelkrisper.github.io/rubik/) |
-| [schachfoto](https://github.com/michaelkrisper/schachfoto) | Photograph a chess board and see the best moves, with Gemini vision and Stockfish WASM (German UI) | [Open](https://schachfoto.pages.dev) |
-| [sudokufoto](https://github.com/michaelkrisper/sudokufoto) | Photograph a sudoku and see the solution, with on-device recognition (German UI) | [Open](https://michaelkrisper.github.io/sudokufoto/) |
-| [puzzlehelfer](https://github.com/michaelkrisper/puzzlehelfer) | Photograph jigsaw pieces and see where each one goes, on-device with OpenCV.js (German UI) | [Open](https://michaelkrisper.github.io/puzzlehelfer/) |
-| [muenzen](https://github.com/michaelkrisper/muenzen) | Count euro coins from a photo (German UI) | [Open](https://michaelkrisper.github.io/muenzen/) |
-| [tv](https://github.com/michaelkrisper/tv) | What is on TV now and at 20:15 in Germany and Austria (German UI) | [Open](https://michaelkrisper.github.io/tv/) |
-| [saugi](https://github.com/michaelkrisper/saugi) | Fast Roborock vacuum remote with a live map and no-go zones | [Open](https://saugi.pages.dev) |
-| [OfficeUnlocker](https://github.com/michaelkrisper/OfficeUnlocker) | Remove editing restrictions from Office, OpenDocument, VBA and PST files, fully client-side | [Open](https://michaelkrisper.github.io/OfficeUnlocker/) |
+| [webgraphy](https://github.com/michaelkrisper/webgraphy) | WebGL data visualisation for millions of points: multi-axis charts, formula engine, fully offline | [Open](https://webgraphy.krisperapps.de/) |
+| [schall](https://github.com/michaelkrisper/schall) | Sound level meter and frequency analyser, Rust/WASM SIMD with WebGL2 (German UI) | [Open](https://schall.krisperapps.de/) |
+| [wetter](https://github.com/michaelkrisper/wetter) | Weather for Austria: minute-precise nowcast, hourly and daily forecasts blended into one (German UI) | [Open](https://wetter.krisperapps.de/) |
+| [rubik](https://github.com/michaelkrisper/rubik) | Photograph a Rubik's Cube and solve it move by move with a 3D guide (German UI) | [Open](https://rubik.krisperapps.de/) |
+| [schachfoto](https://github.com/michaelkrisper/schachfoto) | Photograph a chess board and see the best moves, with Gemini vision and Stockfish WASM (German UI) | [Open](https://schach.krisperapps.de/) |
+| [sudokufoto](https://github.com/michaelkrisper/sudokufoto) | Photograph a sudoku and see the solution, with on-device recognition (German UI) | [Open](https://sudoku.krisperapps.de/) |
+| [puzzlehelfer](https://github.com/michaelkrisper/puzzlehelfer) | Photograph jigsaw pieces and see where each one goes, on-device with OpenCV.js (German UI) | [Open](https://puzzle.krisperapps.de/) |
+| [muenzen](https://github.com/michaelkrisper/muenzen) | Count euro coins from a photo (German UI) | [Open](https://muenzen.krisperapps.de/) |
+| [tv](https://github.com/michaelkrisper/tv) | What is on TV now and at 20:15 in Germany and Austria (German UI) | [Open](https://tv.krisperapps.de/) |
+| [saugi](https://github.com/michaelkrisper/saugi) | Fast Roborock vacuum remote with a live map and no-go zones | [Open](https://roscoe.krisperapps.de/) |
+| [OfficeUnlocker](https://github.com/michaelkrisper/OfficeUnlocker) | Remove editing restrictions from Office, OpenDocument, VBA and PST files, fully client-side | [Open](https://officeunlocker.krisperapps.de/) |
 | [energieausweis-extraktor](https://github.com/michaelkrisper/energieausweis-extraktor) | Extract key figures from Austrian energy certificate PDFs into Excel, offline (German UI) | |
 
 ## Tools and systems
