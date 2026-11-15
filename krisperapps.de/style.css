@@ -292,6 +292,30 @@ footer {
 }
 
 footer a { color: inherit; }
+footer p { margin: 0.35rem 0; }
+
+.legal-head {
+  width: min(44rem, 100% - 2.5rem);
+  margin-inline: auto;
+  padding-top: clamp(1.5rem, 5vw, 3rem);
+}
+.legal-head .brand { color: var(--text); text-decoration: none; }
+
+main.legal {
+  width: min(44rem, 100% - 2.5rem);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+.legal h1 { max-width: none; margin: 1.5rem 0 0.75rem; font-size: clamp(1.9rem, 6vw, 2.6rem); letter-spacing: -0.02em; }
+.legal h2 { margin: 2.25rem 0 0.5rem; font-size: 1.25rem; scroll-margin-top: 1rem; }
+.legal h3 { margin: 1.5rem 0 0.25rem; font-size: 1rem; scroll-margin-top: 1rem; }
+.legal p, .legal ul { margin: 0.5rem 0; color: var(--muted); }
+.legal ul { padding-left: 1.2rem; }
+.legal .lead { color: var(--text); font-size: 1.05rem; }
+.legal strong { color: var(--text); }
+.legal a { color: var(--text); }
+.legal .stand { margin-top: 2.5rem; font-size: 0.86rem; }
+.legal section:target h3 { text-decoration: underline; text-underline-offset: 0.25em; }
 
 @media (max-width: 26rem) {
   .card { grid-template-columns: auto 1fr; }
