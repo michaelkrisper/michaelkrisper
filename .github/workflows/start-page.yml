@@ -37,3 +37,4 @@ jobs:
         run: |
           curl -fsS https://krisperapps.de/ | grep -q 'krisperapps'
           curl -fsSL https://krisperapps.de/impressum | grep -q 'Medieninhaber'
+          curl -fsS https://krisperapps.de/manifest.webmanifest | grep -q 'icon-512.png'
